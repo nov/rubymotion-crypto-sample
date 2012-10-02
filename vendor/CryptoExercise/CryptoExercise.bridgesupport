@@ -1,0 +1,117 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<string_constant name='kPrivateKeyTag' value='com.apple.sample.privatekey'/>
+<string_constant name='kPublicKeyTag' value='com.apple.sample.publickey'/>
+<string_constant name='kSymmetricKeyTag' value='com.apple.sample.symmetrickey'/>
+<enum name='kChosenCipherBlockSize' value='16'/>
+<enum name='kChosenCipherKeySize' value='16'/>
+<enum name='kChosenDigestLength' value='20'/>
+<enum name='kPKCS1' value='11'/>
+<enum name='kTypeOfSigPadding' value='32770'/>
+<enum name='kTypeOfWrapPadding' value='1'/>
+<class name='SecKeyWrapper'>
+<method selector='addPeerPublicKey:keyBits:'>
+<arg type='@' index='0' name='peerName' declared_type='NSString*'/>
+<arg type='@' index='1' name='publicKey' declared_type='NSData*'/>
+<retval type='^{__SecKey=}' declared_type='SecKeyRef'/>
+</method>
+<method selector='deleteAsymmetricKeys'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='deleteSymmetricKey'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='doCipher:key:context:padding:'>
+<arg type='@' index='0' name='plainText' declared_type='NSData*'/>
+<arg type='@' index='1' name='symmetricKey' declared_type='NSData*'/>
+<arg type='I' index='2' name='encryptOrDecrypt' declared_type='CCOperation'/>
+<arg type='^I' index='3' name='pkcs7' declared_type='CCOptions*'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='generateKeyPair:'>
+<arg type='I' index='0' name='keySize' declared_type='NSUInteger'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='generateSymmetricKey'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='getHashBytes:'>
+<arg type='@' index='0' name='plainText' declared_type='NSData*'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='getKeyRefWithPersistentKeyRef:'>
+<arg type='^v' index='0' name='persistentRef' declared_type='CFTypeRef'/>
+<retval type='^{__SecKey=}' declared_type='SecKeyRef'/>
+</method>
+<method selector='getPersistentKeyRefWithKeyRef:'>
+<arg type='^{__SecKey=}' index='0' name='keyRef' declared_type='SecKeyRef'/>
+<retval type='^v' declared_type='CFTypeRef'/>
+</method>
+<method selector='getPrivateKeyRef'>
+<retval type='^{__SecKey=}' declared_type='SecKeyRef'/>
+</method>
+<method selector='getPublicKeyBits'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='getPublicKeyRef'>
+<retval type='^{__SecKey=}' declared_type='SecKeyRef'/>
+</method>
+<method selector='getSignatureBytes:'>
+<arg type='@' index='0' name='plainText' declared_type='NSData*'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='getSymmetricKeyBytes'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='privateTag'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='publicTag'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='removePeerPublicKey:'>
+<arg type='@' index='0' name='peerName' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPrivateTag:'>
+<arg type='@' index='0' name='privateTag' declared_type='NSData*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPublicTag:'>
+<arg type='@' index='0' name='publicTag' declared_type='NSData*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSymmetricKeyRef:'>
+<arg type='@' index='0' name='symmetricKeyRef' declared_type='NSData*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSymmetricTag:'>
+<arg type='@' index='0' name='symmetricTag' declared_type='NSData*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sharedWrapper' class_method='true'>
+<retval type='@' declared_type='SecKeyWrapper*'/>
+</method>
+<method selector='symmetricKeyRef'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='symmetricTag'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='unwrapSymmetricKey:'>
+<arg type='@' index='0' name='wrappedSymmetricKey' declared_type='NSData*'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='verifySignature:secKeyRef:signature:'>
+<arg type='@' index='0' name='plainText' declared_type='NSData*'/>
+<arg type='^{__SecKey=}' index='1' name='publicKey' declared_type='SecKeyRef'/>
+<arg type='@' index='2' name='sig' declared_type='NSData*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='wrapSymmetricKey:keyRef:'>
+<arg type='@' index='0' name='symmetricKey' declared_type='NSData*'/>
+<arg type='^{__SecKey=}' index='1' name='publicKey' declared_type='SecKeyRef'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+</class>
+</signatures>
